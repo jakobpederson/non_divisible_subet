@@ -13,4 +13,8 @@ class NonDivisibleSubsetTest(unittest.TestCase):
         arr = [1, 7, 2, 4]
         result = self.client.get_subset(n, k, arr)
         self.assertEqual(3, result)
-        self.fail(self.client.get_subset(n, k, arr))
+        n2 = 5
+        k2 = 5
+        arr2 = [2, 7, 12, 17, 22]
+        result = self.client.get_subset(n2, k2, arr2)
+        self.assertEqual(5, result)
