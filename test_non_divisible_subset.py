@@ -16,5 +16,10 @@ class NonDivisibleSubsetTest(unittest.TestCase):
         n2 = 5
         k2 = 5
         arr2 = [2, 7, 12, 17, 22]
-        result = self.client.get_subset(n2, k2, arr2)
-        self.assertEqual(5, result)
+        result2 = self.client.get_subset(n2, k2, arr2)
+        self.assertEqual(5, result2)
+        n3 = 6
+        k3 = 9
+        arr3 = [422346306, 940894801, 696810740, 862741861, 85835055, 313720373]
+        result3 = self.client.get_subset(n3, k3, arr3)
+        self.assertEqual(5, result3)
