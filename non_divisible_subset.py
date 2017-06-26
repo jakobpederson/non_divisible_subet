@@ -4,10 +4,10 @@ class NonDivisibleSubset():
 
     def get_subset(self, n, k, arr):
         data = [x % k for x in arr]
-        return sum(next(self.subset_size(k, data)))
+        return sum(self.subset_size(k, data))
 
     def subset_size(self, k, data):
-        yield [
+        return [
             (
                 max(data.count(i), data.count(k - i)) if i != 0 and i * 2 != k else
                 min(1, data.count(i))
