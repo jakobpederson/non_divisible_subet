@@ -1,14 +1,17 @@
 from itertools import combinations
 
 
-class NonDivisbileSubset():
+class NonDivisibleSubset():
 
     def get_subset(self, n, k, arr):
+        if k == 1:
+            yield 1
         while(n > 1):
-            comb = combinations(arr, n)
-            for comb_ in comb:
-                print(list(combinations(comb_, 2)))
-                if all((x + y) % k for (x, y) in combinations(comb_, 2)):
-                    return n
+            subsets = combinations(arr, n)
+            if [
+                subset for subset in subsets
+                if all((x + y) % k != 0 for (x, y) in combinations(subset, 2))
+            ]:
+                yield n
             n = n - 1
-        return 0
+        yield 0
